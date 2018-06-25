@@ -3,10 +3,10 @@ PlayersList = new Mongo.Collection('players');
 var count=0;
 //Vamos depois modificar pois Bob está sendo todo momento inserido no banco
 
-PlayersList.insert({
-    name: "Bob",
-    score: 0
-    });
+// PlayersList.insert({
+//     name: "Bob",
+//     score: 0
+//     });
 
 
 //Dividindo a condição para tarefas de cliente
@@ -38,10 +38,17 @@ if (Meteor.isClient) {
             console.log(this);
         },
         'click .increment':function(){
-            soma = soma +5;
+            
             let selecionado = Session.get("selecionado");
             console.log(selecionado);
             PlayersList.update(selecionado,{$inc:{score:5}})
+
+        },
+        'click .decrement':function(){
+            
+            let selecionado = Session.get("selecionado");
+            console.log(selecionado);
+            PlayersList.update(selecionado,{$inc:{score:-5}})
 
         }
         
