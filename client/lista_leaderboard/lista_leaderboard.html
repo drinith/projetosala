@@ -1,0 +1,21 @@
+<template name="lista_leaderboard">
+
+    <div class="row">
+        <div class="col-xs-12">
+            {{#each player}}
+            <div class="row ">
+                <div class=" player {{selecionado}} linha col-xs-10 ">
+                    {{name}}: {{score}}
+                </div>
+
+                <div class="btn-group linha col-xs-2 ">
+                    <button class="btn btn-success incrementa" id="{{_id}}">+5</button>
+                    <button class="btn btn-danger decrementa" id="{{_id}}">-5</button>
+                </div>
+
+            </div>
+            <hr> {{/each}}
+        </div>
+    </div>
+
+</template>
