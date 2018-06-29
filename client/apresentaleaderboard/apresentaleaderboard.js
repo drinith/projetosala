@@ -3,8 +3,10 @@
     //Chamada do Helpers para manipular as "váriaveis" Blaze do html 
     Template.apresentaleaderboard.helpers({
         'player': function () {
-
-            return PlayersList.find({}, { sort: { score: -1, name: 1 } });
+            var currentUserId = Meteor.userId(); 
+            console.log(Meteor.userId());
+            
+            return PlayersList.find({criadoPor: currentUserId},{sort: { score: -1, name: 1 } });
 
         },
         'classeSelecionado': function () {

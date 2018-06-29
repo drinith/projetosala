@@ -1,11 +1,10 @@
 <template name="apresentaleaderboard">
     <ul>
         {{#each player}}
-        <li  class="player {{classeSelecionado}}">{{name}}: {{score}}</li>
+        <li  class="player {{classeSelecionado}}">{{name}}: {{score}}:{{criadoPor}}</li>
         {{/each}}
     </ul>
-   
-  
+     
         <input type="button" class="increment" value="+5">
         <input type="button" class="decrement" value="-5">
        {{#if alunoSelecionado}}

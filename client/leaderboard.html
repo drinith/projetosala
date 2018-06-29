@@ -6,6 +6,10 @@
     <h1>Leaderboard</h1>
 
     <!-- Estrutura Blaze que chama o conteudo do template -->
-     {{> apresentaleaderboard}} 
-     {{>addPlayerForm}}
+    {{> loginButtons}}
+    {{#if currentUser}}
+    {{> apresentaleaderboard}} 
+      
+        {{> addPlayerForm}}
+    {{/if}}
 </body>

@@ -19,3 +19,5 @@ autopublish
 blaze-html-templates
 insecure
 session
+accounts-password
+accounts-ui
