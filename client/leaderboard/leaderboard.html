@@ -1,0 +1,26 @@
+<template name="leaderboard">
+
+
+    <header class="container">
+
+        <nav class="navbar navbar-default">
+
+            <div class="navbar navbar-default">
+                                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><button  class="glyphicon glyphicon-list"></button></li>
+                    <li><button  class="glyphicon glyphicon-user"></button></li>
+                    <li>{{> loginButtons}}</li>                   
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Estrutura Blaze que chama o conteudo do template -->
+    <main class="container">
+          {{> UI.dynamic template= myTemplate}}
+    </main>
+   
+
+</template>
