@@ -1,12 +1,11 @@
  // this code only runs on the client
-
+ Meteor.subscribe('thePlayers');
+ 
     //Chamada do Helpers para manipular as "váriaveis" Blaze do html 
     Template.apresentaleaderboard.helpers({
         'player': function () {
-            var currentUserId = Meteor.userId(); 
-            console.log(Meteor.userId());
-            
-            return PlayersList.find({criadoPor: currentUserId},{sort: { score: -1, name: 1 } });
+            console.log(PlayersList.find({}, {sort: {score: -1, name: 1}}));
+            return PlayersList.find({}, {sort: {score: -1, name: 1}});
 
         },
         'classeSelecionado': function () {
@@ -37,14 +36,14 @@
 
             let selecionado = Session.get("selecionado");
         
-            PlayersList.update(selecionado, { $inc: { score: 5 } })
+           Meteor.call("modificaScore",selecionado,5);
 
         },
         'click .decrement': function () {
 
             let selecionado = Session.get("selecionado");
             console.log(selecionado);
-            PlayersList.update(selecionado, { $inc: { score: -5 } })
+            Meteor.call("modificaScore",selecionado,-5);
 
         }
 

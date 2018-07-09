@@ -1,14 +1,13 @@
 <template name="apresentaleaderboard">
     <ul>
         {{#each player}}
-        <li  class="player {{classeSelecionado}}">{{name}}: {{score}}:{{criadoPor}}</li>
+        <li class="player {{classeSelecionado}}">{{name}}: {{score}}</li>
         {{/each}}
     </ul>
-     
-        <input type="button" class="increment" value="+5">
-        <input type="button" class="decrement" value="-5">
-       {{#if alunoSelecionado}}
-            <p>Aluno selecionado: {{alunoSelecionado.name}} com uma pontuação de {{alunoSelecionado.score}}</p>
-       {{/if}}
+
+    <input type="button" class="increment" value="+5">
+    <input type="button" class="decrement" value="-5"> {{#if alunoSelecionado}}
+    <p>Aluno selecionado: {{alunoSelecionado.name}} com uma pontuação de {{alunoSelecionado.score}}</p>
+    {{/if}}
 
 </template>
